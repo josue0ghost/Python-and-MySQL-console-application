@@ -7,25 +7,24 @@
     *   Create, Read, Delete grades [ ]
 """
 
-# menu
+from users import actions
+
+userActions = actions.Actions()
+
+###### MENU ######
 print("""
     Available options:
         - signup
         - signin
 """)
 
+###### LOGIN ######
+
 action = input("Write your selected item: ")
 
 if action == "signup":
-    print("Selected item: signup")
-    name =      input("Your name: ")
-    lastname =  input("Your last name: ")
-    email =     input("Your email: ")
-    password =  input("Choose a password: ")
-
+    userActions.signup()    
     # Write to DB
 
 elif action == "signin":
-    print("Selected item: signin")
-    email =     input("Email: ")
-    password =  input("Password: ")
+    userActions.signin()
