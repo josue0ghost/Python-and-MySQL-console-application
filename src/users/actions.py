@@ -12,7 +12,7 @@ class Actions:
         reg = newUser.register()
 
         if reg[0] >= 1:
-            print(f"{reg[0].name}, you've been registered with email {reg[0].email}")
+            print(f"{reg[1].name}, you've been registered with email {reg[1].email}")
         else:
             print("Registration failed")
     
