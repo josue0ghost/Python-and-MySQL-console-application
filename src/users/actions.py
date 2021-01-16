@@ -20,4 +20,11 @@ class Actions:
         print("Selected item: signin")
         email =     input("Email: ")
         password =  input("Password: ")
+
+        existingUser = user.User('', '', email, password)
+        login = existingUser.identify()
+
+        # id | name | lastname | email | password | date
+        if email == login[3]: 
+            print(f"Welcome, {login[1]}")
     

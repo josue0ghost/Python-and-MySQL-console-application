@@ -32,4 +32,17 @@ class User:
         return result
 
     def identify(self):
-        return self.name
+        # query
+        sql = "SELECT * FROM users WHERE email = %s AND password = %s"
+
+        # Ciph
+        cipher = hashlib.sha256()
+        cipher.update(self.password.encode('utf8'))
+
+        # data for query
+        user = (self.email, cipher.hexdigest())
+
+        cursor.execute(sql, user)        
+        result = cursor.fetchone()
+
+        return result
