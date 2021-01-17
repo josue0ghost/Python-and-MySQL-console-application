@@ -17,14 +17,19 @@ class Actions:
             print("Registration failed")
     
     def signin(self):
-        print("Selected item: signin")
-        email =     input("Email: ")
-        password =  input("Password: ")
+        
+        try:
+            email =     input("Email: ")
+            password =  input("Password: ")
 
-        existingUser = user.User('', '', email, password)
-        login = existingUser.identify()
+            existingUser = user.User('', '', email, password)
+            login = existingUser.identify()
 
-        # id | name | lastname | email | password | date
-        if email == login[3]: 
-            print(f"Welcome, {login[1]}")
+            # id | name | lastname | email | password | date
+            if email == login[3]: 
+                print(f"Welcome, {login[1]}")
+        except Exception as e:
+            print(type(e))
+            print(type(e).__name__)
+            print("Login failed")
     
