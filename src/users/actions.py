@@ -28,8 +28,35 @@ class Actions:
             # id | name | lastname | email | password | date
             if email == login[3]: 
                 print(f"Welcome, {login[1]}")
+                self.mainMenu(login)
+
         except Exception as e:
             print(type(e))
             print(type(e).__name__)
             print("Login failed")
     
+    def mainMenu(self, user):
+        print("""
+        Available options:
+            - Create grade  (create)
+            - Show grades   (show)
+            - Delete grade  (delete)
+            - Log out       (exit)
+        """)
+
+        action = input("What do you want to do?: ")
+
+        if action == "create":
+            print("create")
+            self.mainMenu(user)
+
+        elif action == "show":
+            print("show")
+            self.mainMenu(user)
+
+        elif action == "delete":
+            print("delete")
+            self.mainMenu(user)
+
+        elif action == "exit":
+            exit()
