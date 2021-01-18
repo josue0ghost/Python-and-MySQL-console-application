@@ -1,10 +1,10 @@
 """
     TODO:
-    *   Sign up [ ]
+    *   Sign up [x]
         -   Insert into DB
-    *   Sign in [ ]
+    *   Sign in [x]
         -   Identify user
-    *   Create, Read, Delete grades [ ]
+    *   Create, Read, Delete grades [x]
 """
 
 from users import actions
