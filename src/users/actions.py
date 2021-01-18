@@ -1,4 +1,5 @@
 import users.user as user
+import grades.actions as grade
 
 class Actions:
     def signup(self):
@@ -45,17 +46,18 @@ class Actions:
         """)
 
         action = input("What do you want to do?: ")
+        gradeActions = grade.Actions()
 
         if action == "create":
-            print("create")
+            gradeActions.create(user)
             self.mainMenu(user)
 
         elif action == "show":
-            print("show")
+            gradeActions.show(user)
             self.mainMenu(user)
 
         elif action == "delete":
-            print("delete")
+            gradeActions.delete(user)
             self.mainMenu(user)
 
         elif action == "exit":
